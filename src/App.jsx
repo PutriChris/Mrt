@@ -160,8 +160,10 @@ function App() {
                 <p>Tujuan: {destination || "Belum dipilih"}</p>
                 <p>Tarif: {fare !== "Tidak tersedia" ? `Rp ${fare}` : "Tidak tersedia"}</p>
                 <p>Jumlah Tiket: {ticketAmount || "0" }</p>
-                <button onClick={() => setIsPopupOpen(false)}>Tutup</button>
-                <button className="button confirm-button" onClick={handleConfirmPayment}>Konfirmasi</button>
+                <div className="button-container">
+                  <button className="confirm-button" onClick={handleConfirmPayment}>Konfirmasi</button>
+                  <button className="close-button" onClick={() => setIsPopupOpen(false)}>Tutup</button>
+                </div>
               </div>
             </div>
           )}
@@ -179,8 +181,10 @@ function App() {
           <div className="qris-container">
             <img src="qris.jpeg" alt="QRIS Pembayaran" className="qris-image" />
           </div>
-          <button className="button telah-membayar-button" onClick={handlePaymentSuccess}>Telah Membayar</button>
-          <button className="button back-button" onClick={handleBack}>Kembali</button>
+          <div className="button-container">
+            <button className="telah-membayar-button" onClick={handlePaymentSuccess}>Telah Membayar</button>
+            <button className="back-button" onClick={handleBack}>Kembali</button>
+          </div>
         </div>
       ) : (
         <div className="popup">
