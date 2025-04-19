@@ -148,7 +148,7 @@ function App() {
             />
             {errors.ticketAmount && <p className="error-message">{errors.ticketAmount}</p>}
 
-            <button className="choose-station-button" onClick={handleSelectStations}>Pilih Stasiun</button>
+            <button className="button choose-station-button" onClick={handleSelectStations}>Pilih Stasiun</button>
           </div>
 
           {isPopupOpen && (
@@ -161,7 +161,7 @@ function App() {
                 <p>Tarif: {fare !== "Tidak tersedia" ? `Rp ${fare}` : "Tidak tersedia"}</p>
                 <p>Jumlah Tiket: {ticketAmount || "0" }</p>
                 <button onClick={() => setIsPopupOpen(false)}>Tutup</button>
-                <button className="confirm-button" onClick={handleConfirmPayment}>Konfirmasi</button>
+                <button className="button confirm-button" onClick={handleConfirmPayment}>Konfirmasi</button>
               </div>
             </div>
           )}
@@ -179,8 +179,8 @@ function App() {
           <div className="qris-container">
             <img src="qris.jpeg" alt="QRIS Pembayaran" className="qris-image" />
           </div>
-          <button className="telah-membayar-button" onClick={handlePaymentSuccess}>Telah Membayar</button>
-          <button className="back-button" onClick={handleBack}>Kembali</button>
+          <button className="button telah-membayar-button" onClick={handlePaymentSuccess}>Telah Membayar</button>
+          <button className="button back-button" onClick={handleBack}>Kembali</button>
         </div>
       ) : (
         <div className="popup">
